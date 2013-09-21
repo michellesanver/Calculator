@@ -12,7 +12,6 @@ use Calculator\Operator\Modular as Modular;
 use Calculator\Operator\Multiplication as Multiplication;
 use Calculator\Operator\Subtraction as Subtraction;
 use Calculator\Io\Io as Io;
-use Calculator\Io\Io as Io;
 
 // Initiate the calculator
 $calculator = new Calculator(new Io());
