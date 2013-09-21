@@ -14,7 +14,6 @@ use Calculator\Operator\Multiplication as Multiplication;
 use Calculator\Operator\Subtraction as Subtraction;
 use Calculator\Io\Io as Io;
 
-// TODO: Write tests :P
 class CalculatorTest extends \PHPUnit_Framework_TestCase 
 {
 	protected $calculator;
