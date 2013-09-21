@@ -22,30 +22,16 @@ class Calculator {
 	/**
 	 * Runs the calculator.
 	 */
-	public function run() {
+	public function run() 
+	{
+		$this->io->write("Enter a calculation and press enter to continue (empty line to quit):", true);
+		$this->io->write("CALCULATION: ", false);
 
-		$askNextCalculation = true;
-
-		while ($askNextCalculation) {
-			$this->io->write("Enter a calculation and press enter to continue (empty line to quit):", true);
+		while($calculation = $this->io->read()) {
+			$this->expressions = explode(' ', $calculation);
+			$result = $this->calculate();
+			$this->io->write("Result = " . $result.PHP_EOL, true);
 			$this->io->write("CALCULATION: ", false);
-
-    		$calculation = $this->io->read();
-    		
-    		if (empty($calculation)) {
-        		$askNextCalculation = false;
-        		continue;
-    		}
-
-    		// to make the assignment easier, make sure you put spaces in your calculation and explode on those
-    		$this->expressions = explode(' ', $calculation);
-
-    		// DO SOME CALCULATION: THIS IS WHERE YOUR LOGIC SHOULD BE INSERTED
-    		$result = $this->calculate();
-
-    		// print result
-    		$this->io->write("Result = " . $result.PHP_EOL, false);
-
 		}
 
 	}
@@ -125,19 +111,20 @@ class Calculator {
 	{
 		foreach($this->expressions as $index => &$part)
 		{
-			if(array_key_exists($part, $operators)) {
-
-				$operator = $operators[$part];
-
-				// Calculate
-				$base = $this->expressions[$index-1];
-				$subject = $this->expressions[$index+1];
-
-				$sum = $operator->process($base, $subject);
-
-				// Replace expression
-				$this->replaceExpressionWithSum($index, $sum);
+			if( ! array_key_exists($part, $operators) ) {
+				continue;
 			}
+
+			$operator = $operators[$part];
+
+			// Calculate
+			$base = $this->expressions[$index-1];
+			$subject = $this->expressions[$index+1];
+
+			$sum = $operator->process($base, $subject);
+
+			// Replace expression
+			$this->replaceExpressionWithSum($index, $sum);
 		}
 	}
 
