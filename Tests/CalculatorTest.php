@@ -7,12 +7,12 @@ spl_autoload_register(function ($class) {
 
 use Calculator\Calculator as Calculator;
 
-use Calculator\Operator\Addition as Addition;
-use Calculator\Operator\Division as Division;
-use Calculator\Operator\Modular as Modular;
-use Calculator\Operator\Multiplication as Multiplication;
-use Calculator\Operator\Subtraction as Subtraction;
-use Calculator\Io\Io as Io;
+use Calculator\Operator\Addition;
+use Calculator\Operator\Division;
+use Calculator\Operator\Modular;
+use Calculator\Operator\Multiplication;
+use Calculator\Operator\Subtraction;
+use Calculator\Io\Io;
 
 class CalculatorTest extends \PHPUnit_Framework_TestCase 
 {
@@ -33,46 +33,55 @@ class CalculatorTest extends \PHPUnit_Framework_TestCase
 
 	public function testAddition()
 	{
-		$input = "1 + 4";
+		$addition = new Addition();
 
 		$expected = 5;
-
-		$actual = $this->calculator->calculate($input);
+		$actual = $addition->process(1, 4);
 
 		$this->assertEquals($expected, $actual);
 	}
 
 	public function testSubstraction()
 	{
-		$input = "8 - 9";
+		$subtraction = new Subtraction();
 
 		$expected = -1;
-
-		$actual = $this->calculator->calculate($input);
+		$actual = $subtraction->process(8, 9);
 
 		$this->assertEquals($expected, $actual);		
 	}
 
 	public function testMultiplication()
 	{
-		$input = "3 * 9";
+		$multiplication = new Multiplication();
 
 		$expected = 27;
 
-		$actual = $this->calculator->calculate($input);
+		$actual = $multiplication->process(3, 9);
 
 		$this->assertEquals($expected, $actual);		
 	}
 
 	public function testDivision()
 	{
-		$input = "9 / 3";
+		$division = new Division();
 
 		$expected = 3;
 
-		$actual = $this->calculator->calculate($input);
+		$actual = $division->process(9, 3);
 
 		$this->assertEquals($expected, $actual);		
+	}
+
+	public function testModular()
+	{
+		$modular = new Modular();
+
+		$expected = 1;
+
+		$actual = $modular->process(5, 2);
+
+		$this->assertEquals($expected, $actual);
 	}
 
 	public function testCombinedOperations()
