@@ -28,7 +28,7 @@ of your time on the programming with zero overhead on setup.
 # Example usage
 
 ```
-$ php calculator_assignment.php
+$ php index.php
 
 Enter a calculation and press enter to continue (empty line to quit):
 
@@ -43,7 +43,7 @@ RESULT = -14
 Addition
 
 ```
-$ php calculator_assignment.php
+$ php index.php
 
 Enter a calculation and press enter to continue (empty line to quit):
 
@@ -55,7 +55,7 @@ RESULT = 5
 Substraction
 
 ```
-$ php calculator_assignment.php
+$ php index.php
 
 Enter a calculation and press enter to continue (empty line to quit):
 
@@ -66,7 +66,7 @@ RESULT = -1
 Multiplication
 
 ```
-$ php calculator_assignment.php
+$ php index.php
 
 Enter a calculation and press enter to continue (empty line to quit):
 
@@ -77,7 +77,7 @@ RESULT = 27
 Division
 
 ```
-$ php calculator_assignment.php
+$ php index.php
 
 Enter a calculation and press enter to continue (empty line to quit):
 
@@ -88,7 +88,7 @@ RESULT = 3
 Modulus
 
 ```
-$ php calculator_assignment.php
+$ php index.php
 
 Enter a calculation and press enter to continue (empty line to quit):
 
@@ -102,7 +102,7 @@ RESULT = 1
 ### Combined operations should be supported
 
 ```
-$ php calculator_assignment.php
+$ php index.php
 
 Enter a calculation and press enter to continue (empty line to quit):
 
