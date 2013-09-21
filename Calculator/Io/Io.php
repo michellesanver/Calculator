@@ -7,18 +7,18 @@ class Io implements IoInterface {
 	/**
 	 * Reads input from the console.
 	 * 
-	 * @return String Returns the output.
+	 * @return String Returns the input.
 	 */
 	public function read() 
 	{
-		$output = trim(fgets(STDIN));
+		$input = trim(fgets(STDIN));
 
-		if (empty($output))
+		if (empty($input))
 		{
 			return null;
 		}
 
-		return $output;
+		return $input;
 	}
 
 	/**
