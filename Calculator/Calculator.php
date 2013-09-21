@@ -30,7 +30,7 @@ class Calculator {
 
 		while($calculation = $this->io->read()) {
 			$result = $this->calculate($calculation);
-			$this->io->write("Result = " . $result.PHP_EOL, true);
+			$this->io->write("Result = " . $result, true);
 			$this->io->write("CALCULATION: ", false);
 		}
 
