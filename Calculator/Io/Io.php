@@ -24,7 +24,7 @@ class Io implements IoInterface {
 	/**
 	 * Write given input with or without new line.
 	 * 
-	 * @param  string  $output  The output to write.
+	 * @param  mixed $output  The output to write.
 	 * @param  boolean $newline Wether or not there's a new line
 	 */
 	public function write($output = '', $newline = true)
