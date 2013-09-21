@@ -29,8 +29,7 @@ class Calculator {
 		$this->io->write("CALCULATION: ", false);
 
 		while($calculation = $this->io->read()) {
-			$this->expressions = explode(' ', $calculation);
-			$result = $this->calculate();
+			$result = $this->calculate($calculation);
 			$this->io->write("Result = " . $result.PHP_EOL, true);
 			$this->io->write("CALCULATION: ", false);
 		}
@@ -51,8 +50,9 @@ class Calculator {
 	 * 
 	 * @return The resulting calculation.
 	 */
-	public function calculate()
+	public function calculate($input)
 	{
+		$this->expressions = explode(' ', $input);
 		$maxPrecedence = $this->getMaxPrecedence();
 
 		for($precedenceIndex = $maxPrecedence; $precedenceIndex >= 0; $precedenceIndex--) {
