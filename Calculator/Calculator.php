@@ -14,12 +14,8 @@ class Calculator {
 	 * We need to define an IO.
 	 * @param IoInterface $io The defines io, needs read and write.
 	 */
-	public function __construct($io)
+	public function __construct(IoInterface $io)
 	{
-		if( ! ($io instanceof IoInterface) ) {
-			die('Expected an IO implementing the IoInterface.');
-		}
-
 		$this->io = $io;
 	}
 
