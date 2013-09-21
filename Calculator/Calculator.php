@@ -3,6 +3,7 @@
 namespace Calculator;
 
 use Calculator\Io\IoInterface as IoInterface;
+use Calculator\Operator\OperatorInterface as OperatorInterface;
 
 class Calculator {
 
@@ -41,7 +42,7 @@ class Calculator {
 	 * 
 	 * @param Operator $operator The operator to add.
 	 */
-	public function addOperator($operator) {
+	public function addOperator(OperatorInterface $operator) {
 		$this->operators[$operator->getToken()] = $operator;
 	}
 
