@@ -2,8 +2,8 @@
 
 namespace Calculator;
 
-use Calculator\Io\IoInterface as IoInterface;
-use Calculator\Operator\OperatorInterface as OperatorInterface;
+use Calculator\Io\IoInterface;
+use Calculator\Operator\OperatorInterface;
 
 class Calculator {
 
