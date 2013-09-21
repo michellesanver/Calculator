@@ -6,12 +6,12 @@ spl_autoload_register(function ($class) {
 
 use Calculator\Calculator as Calculator;
 
-use Calculator\Operator\Addition as Addition;
-use Calculator\Operator\Division as Division;
-use Calculator\Operator\Modular as Modular;
-use Calculator\Operator\Multiplication as Multiplication;
-use Calculator\Operator\Subtraction as Subtraction;
-use Calculator\Io\Io as Io;
+use Calculator\Operator\Addition;
+use Calculator\Operator\Division;
+use Calculator\Operator\Modular;
+use Calculator\Operator\Multiplication;
+use Calculator\Operator\Subtraction;
+use Calculator\Io\Io;
 
 // Initiate the calculator
 $calculator = new Calculator(new Io());
